@@ -101,8 +101,10 @@ const Technologies = () => {
 
   return (
     <section id="technologies" className="section technologies">
+      <div className="particles"></div>
+      
       <div className="container">
-        <div className="section-header">
+        <div className="section-header fade-in">
           <h2 className="section-title">Skills & Technologies</h2>
           <p className="section-subtitle">
             Here are the technologies and tools I've been working with. I'm always learning 
@@ -111,16 +113,24 @@ const Technologies = () => {
         </div>
         
         <div className="technologies-container">
-          {categories.map(category => {
+          {categories.map((category, categoryIndex) => {
             const categoryTechs = technologies.filter(tech => tech.category === category)
             if (categoryTechs.length === 0) return null
             
             return (
-              <div key={category} className="category-group">
+              <div 
+                key={category} 
+                className="category-group fade-in"
+                style={{ transitionDelay: `${categoryIndex * 0.2}s` }}
+              >
                 <h3 className="category-title">{category}</h3>
                 <div className="tech-grid">
-                  {categoryTechs.map((tech, index) => (
-                    <div key={index} className="tech-card">
+                  {categoryTechs.map((tech, techIndex) => (
+                    <div 
+                      key={techIndex} 
+                      className="tech-card fade-in"
+                      style={{ transitionDelay: `${(categoryIndex * 0.2) + (techIndex * 0.1)}s` }}
+                    >
                       <div className="tech-logo">
                         <img 
                           src={tech.logo} 

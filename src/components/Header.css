@@ -4,15 +4,15 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(26, 26, 46, 0.95);
+  background: rgba(10, 10, 10, 0.95);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(0, 212, 170, 0.2);
+  transition: var(--transition);
 }
 
 .header.scrolled {
-  background: rgba(26, 26, 46, 0.98);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  background: rgba(10, 10, 10, 0.98);
+  box-shadow: 0 4px 20px rgba(0, 212, 170, 0.1);
 }
 
 .header-container {
@@ -34,11 +34,11 @@
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--text-primary);
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--accent-gradient-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .logo-text:hover {
@@ -70,8 +70,8 @@
   font-weight: 500;
   cursor: pointer;
   padding: 0.5rem 1rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition);
   position: relative;
   overflow: hidden;
 }
@@ -83,7 +83,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 170, 0.2), transparent);
   transition: left 0.5s ease;
 }
 
@@ -93,7 +93,7 @@
 
 .nav-link:hover {
   color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 212, 170, 0.05);
   transform: translateY(-2px);
 }
 
@@ -105,12 +105,12 @@
   cursor: pointer;
   padding: 0.5rem;
   gap: 4px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  border-radius: var(--border-radius-sm);
+  transition: var(--transition);
 }
 
 .mobile-menu-btn:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 212, 170, 0.05);
 }
 
 .hamburger-line {
@@ -118,7 +118,7 @@
   height: 2px;
   background: var(--text-primary);
   border-radius: 2px;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .mobile-menu-btn.active .hamburger-line:nth-child(1) {
@@ -143,13 +143,13 @@
     top: 70px;
     left: 0;
     right: 0;
-    background: rgba(26, 26, 46, 0.98);
+    background: rgba(10, 10, 10, 0.98);
     backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 212, 170, 0.2);
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    transition: var(--transition);
   }
   
   .nav.nav-open {
@@ -174,11 +174,11 @@
     text-align: center;
     padding: 1rem 2rem;
     border-radius: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(0, 212, 170, 0.05);
   }
   
   .nav-link:hover {
-    background: rgba(102, 126, 234, 0.1);
+    background: rgba(0, 212, 170, 0.1);
     transform: none;
   }
   

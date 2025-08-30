@@ -4,23 +4,32 @@ import './About.css'
 const About = () => {
   return (
     <section id="about" className="section about">
+      <div className="particles"></div>
+      
       <div className="container">
+        <div className="section-header fade-in">
+          <h2 className="section-title">About Me</h2>
+          <p className="section-subtitle">
+            Get to know me better - my journey, skills, and what drives me in the world of technology.
+          </p>
+        </div>
+        
         <div className="about-content">
           <div className="about-left">
-            <div className="profile-container">
+            <div className="profile-container scale-in stagger-1">
               <div className="profile-hexagon">
                 <span className="profile-initial">J</span>
-              </div>
-              <div className="profile-decoration">
-                <div className="decoration-dot dot-1"></div>
-                <div className="decoration-dot dot-2"></div>
-                <div className="decoration-dot dot-3"></div>
+                <div className="profile-decoration">
+                  <div className="decoration-dot dot-1"></div>
+                  <div className="decoration-dot dot-2"></div>
+                  <div className="decoration-dot dot-3"></div>
+                </div>
               </div>
             </div>
           </div>
           
           <div className="about-right">
-            <div className="about-section">
+            <div className="about-section fade-in stagger-2">
               <h3 className="about-heading">
                 <span className="heading-icon">🌟</span>
                 About Me
@@ -36,7 +45,7 @@ const About = () => {
               </blockquote>
             </div>
 
-            <div className="about-section">
+            <div className="about-section fade-in stagger-3">
               <h3 className="about-heading">
                 <span className="heading-icon">🎓</span>
                 Education
@@ -48,7 +57,7 @@ const About = () => {
               </div>
             </div>
 
-            <div className="about-section">
+            <div className="about-section fade-in stagger-4">
               <h3 className="about-heading">
                 <span className="heading-icon">🏆</span>
                 Achievements & Certifications
@@ -67,7 +76,7 @@ const About = () => {
               </div>
             </div>
 
-            <div className="about-section">
+            <div className="about-section fade-in stagger-5">
               <h3 className="about-heading">
                 <span className="heading-icon">💼</span>
                 Experience

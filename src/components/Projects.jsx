@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Projects.css'
 
 const Projects = () => {
-  const [currentIndex, setCurrentIndex] = useState(0)
-
   const projects = [
     {
       id: 1,
@@ -43,69 +41,63 @@ const Projects = () => {
     }
   ]
 
-  const nextProject = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === projects.length - 1 ? 0 : prevIndex + 1
-    )
-  }
-
-  const prevProject = () => {
-    setCurrentIndex((prevIndex) => 
-      prevIndex === 0 ? projects.length - 1 : prevIndex - 1
-    )
-  }
-
   return (
     <section id="projects" className="section projects">
+      <div className="particles"></div>
+      
       <div className="container">
-        <h2 className="section-title">My Projects</h2>
-        <p className="section-subtitle">
-          Here are some projects I've worked on. Each one has taught me something new and 
-          helped me grow as a developer.
-        </p>
+        <div className="section-header fade-in">
+          <h2 className="section-title">My Projects</h2>
+          <p className="section-subtitle">
+            Here are some projects I've worked on. Each one has taught me something new and 
+            helped me grow as a developer.
+          </p>
+        </div>
         
-        <div className="projects-horizontal">
-          <button className="nav-arrow nav-left" onClick={prevProject}>
-            <span>‹</span>
-          </button>
-          
-          <div className="projects-row">
-            {projects.map((project, index) => (
-              <div 
-                key={project.id} 
-                className={`project-card ${index === currentIndex ? 'featured' : ''}`}
-              >
-                <div className="project-header">
-                  <div className="project-image">
-                    <img src={project.image} alt={project.title} />
-                    <div className="project-overlay">
-                      <span className="project-status">{project.status}</span>
-                    </div>
+        <div className="projects-grid">
+          {projects.map((project, index) => (
+            <div 
+              key={project.id} 
+              className="project-card fade-in"
+              style={{ transitionDelay: `${index * 0.2}s` }}
+            >
+              <div className="project-header">
+                <div className="project-image">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    onError={(e) => {
+                      console.error(`Failed to load image: ${project.image}`);
+                      e.target.style.display = 'none';
+                    }}
+                  />
+                  <div className="project-overlay">
+                    <span className="project-status">{project.status}</span>
                   </div>
                   <div className="project-category">{project.category}</div>
                 </div>
-                
-                <div className="project-content">
-                  <h3 className="project-title">
-                    {project.title}
-                    <span className="project-arrow">→</span>
-                  </h3>
-                  <p className="project-description">{project.description}</p>
-                  <div className="project-technologies">
-                    {project.technologies.map((tech, index) => (
-                      <span key={index} className="project-tech-tag">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+              </div>
+              
+              <div className="project-content">
+                <h3 className="project-title">
+                  {project.title}
+                  <span className="project-arrow">→</span>
+                </h3>
+                <p className="project-description">{project.description}</p>
+                <div className="project-technologies">
+                  {project.technologies.map((tech, techIndex) => (
+                    <span 
+                      key={techIndex} 
+                      className="project-tech-tag fade-in"
+                      style={{ transitionDelay: `${(index * 0.2) + (techIndex * 0.1)}s` }}
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
               </div>
-            ))}
-          </div>
-          
-          <button className="nav-arrow nav-right" onClick={nextProject}>
-            <span>›</span>
-          </button>
+            </div>
+          ))}
         </div>
       </div>
     </section>
