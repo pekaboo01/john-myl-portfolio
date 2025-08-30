@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import LoadingPage from './components/LoadingPage'
 import ScrollAnimations from './components/ScrollAnimations'
 import Header from './components/Header'
@@ -7,8 +8,10 @@ import About from './components/About'
 import Technologies from './components/Technologies'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
+import GamesPage from './pages/GamesPage'
 
-function App() {
+// Main Portfolio Component with Loading
+const MainPortfolio = () => {
   const [isLoading, setIsLoading] = useState(true)
   const [isTransitioning, setIsTransitioning] = useState(false)
 
@@ -34,12 +37,9 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <>
       <ScrollAnimations />
-      
-      {/* Particle Background */}
       <div className="particles"></div>
-      
       <Header />
       <main>
         <Hero />
@@ -48,7 +48,23 @@ function App() {
         <Projects />
         <Contact />
       </main>
-    </div>
+    </>
+  )
+}
+
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Routes>
+          {/* Main Portfolio Route - Shows Loading Page */}
+          <Route path="/" element={<MainPortfolio />} />
+          
+          {/* Games Page Route - No Loading Page */}
+          <Route path="/games" element={<GamesPage />} />
+        </Routes>
+      </div>
+    </Router>
   )
 }
 

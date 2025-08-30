@@ -375,6 +375,32 @@
   color: var(--text-secondary);
 }
 
+/* Games CTA Button */
+.games-cta {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.view-more-games-btn {
+  background: var(--accent-gradient);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.view-more-games-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 212, 170, 0.3);
+}
+
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .hero-content {
@@ -468,5 +494,15 @@
   .start-btn, .pause-btn, .resume-btn, .reset-btn {
     padding: 0.4rem 0.8rem;
     font-size: 0.8rem;
+  }
+
+  /* Responsive adjustments for games CTA */
+  .games-cta {
+    margin-top: 1rem;
+  }
+  
+  .view-more-games-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
   }
 }

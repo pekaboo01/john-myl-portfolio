@@ -56,6 +56,11 @@ const Header = () => {
               </button>
             </li>
             <li className="nav-item">
+              <a href="/games" className="nav-link games-nav-link">
+                Games
+              </a>
+            </li>
+            <li className="nav-item">
               <button onClick={() => scrollToSection('contact')} className="nav-link">
                 Contact
               </button>

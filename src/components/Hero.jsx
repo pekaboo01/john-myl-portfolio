@@ -94,6 +94,17 @@ const Hero = () => {
             </div>
             
             <SnakeGame />
+            
+            <div className="games-cta fade-in stagger-5">
+              <button 
+                className="view-more-games-btn btn btn-ripple magnetic"
+                onClick={() => window.location.href = '/games'}
+                onMouseMove={handleMagneticHover}
+                onMouseLeave={handleMagneticLeave}
+              >
+                🎮 View More Games
+              </button>
+            </div>
           </div>
         </div>
       </div>

@@ -97,6 +97,27 @@
   transform: translateY(-2px);
 }
 
+/* Games Navigation Link */
+.games-nav-link {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 0;
+}
+
+.games-nav-link:hover {
+  color: var(--accent-primary);
+  transform: translateX(5px);
+}
+
 .mobile-menu-btn {
   display: none;
   flex-direction: column;
