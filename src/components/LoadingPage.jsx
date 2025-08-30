@@ -7,7 +7,7 @@ const LoadingPage = ({ className = '' }) => {
   const [matrixChars, setMatrixChars] = useState([])
 
   useEffect(() => {
-    const fullText = '<404 Greeting Not Found> |'
+    const fullText = '<Hello World> |'
     
     // Type out the text character by character with natural typing rhythm
     let index = 0
