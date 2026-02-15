@@ -60,6 +60,8 @@
 
 .nav-item {
   margin: 0;
+  display: flex;
+  align-items: center;
 }
 
 .nav-link {
@@ -74,6 +76,10 @@
   transition: var(--transition);
   position: relative;
   overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.5;
+  font-family: inherit;
 }
 
 .nav-link::before {
@@ -97,25 +103,19 @@
   transform: translateY(-2px);
 }
 
-/* Games Navigation Link */
+/* Games Navigation Link - inherits nav-link styles, only override what's needed */
 .games-nav-link {
-  background: none;
-  border: none;
-  color: var(--text-secondary);
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: var(--transition);
   text-decoration: none;
-  display: block;
-  width: 100%;
-  text-align: left;
-  padding: 0.5rem 0;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.5;
+  font-family: inherit;
 }
 
 .games-nav-link:hover {
-  color: var(--accent-primary);
-  transform: translateX(5px);
+  color: var(--text-primary);
+  background: rgba(0, 212, 170, 0.05);
+  transform: translateY(-2px);
 }
 
 .mobile-menu-btn {
@@ -197,10 +197,16 @@
     border-radius: 0;
     border-bottom: 1px solid rgba(0, 212, 170, 0.05);
   }
-  
+
   .nav-link:hover {
     background: rgba(0, 212, 170, 0.1);
     transform: none;
+  }
+
+  .games-nav-link {
+    display: block;
+    width: 100%;
+    text-align: center;
   }
   
   .mobile-menu-btn {

@@ -65,6 +65,11 @@ const Header = () => {
                 Contact
               </button>
             </li>
+            <li className="nav-item">
+              <a href="/love" className="nav-link games-nav-link">
+                Love
+              </a>
+            </li>
           </ul>
         </nav>
 
