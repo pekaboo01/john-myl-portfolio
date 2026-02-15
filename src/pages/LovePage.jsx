@@ -292,7 +292,7 @@ const LovePage = () => {
               Happy Valentine's Day
             </h1>
             <h2 className="valentine-name">
-              Asawaa nakoo!!!
+              <i>BEBU!!!</i> 
             </h2>
             <div className="title-hearts">
               <span className="heart-emoji">💕</span>
