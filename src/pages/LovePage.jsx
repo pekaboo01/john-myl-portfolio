@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import './LovePage.css'
 
 const LovePage = () => {
@@ -9,6 +9,11 @@ const LovePage = () => {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [showLoveMessage, setShowLoveMessage] = useState(false)
+  const audioRef = useRef(null)
+  const [audioStarted, setAudioStarted] = useState(false)
+  const [volume, setVolume] = useState(0.5) // Default volume at 50%
+  const [showVolumeControl, setShowVolumeControl] = useState(false)
+  const volumeControlTimeoutRef = useRef(null)
 
   useEffect(() => {
     // Create animated flowers
@@ -47,6 +52,64 @@ const LovePage = () => {
     } else {
       setError('Incorrect password. Please try again.')
       setPassword('')
+    }
+  }
+
+  // Update audio volume when volume state changes
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = volume
+    }
+  }, [volume])
+
+  // Play and loop music when authenticated
+  useEffect(() => {
+    if (isAuthenticated && audioRef.current && !audioStarted) {
+      const playAudio = async () => {
+        try {
+          await audioRef.current.play()
+          setAudioStarted(true)
+        } catch (error) {
+          console.log('Audio play failed (will retry on user interaction):', error)
+          // Some browsers require user interaction before playing audio
+        }
+      }
+      playAudio()
+    }
+  }, [isAuthenticated, audioStarted])
+
+  // Handle volume change
+  const handleVolumeChange = (e) => {
+    const newVolume = parseFloat(e.target.value)
+    setVolume(newVolume)
+  }
+
+  // Handle volume control hover/leave with delay
+  const handleVolumeMouseEnter = () => {
+    if (volumeControlTimeoutRef.current) {
+      clearTimeout(volumeControlTimeoutRef.current)
+      volumeControlTimeoutRef.current = null
+    }
+    setShowVolumeControl(true)
+  }
+
+  const handleVolumeMouseLeave = () => {
+    // Add a delay before hiding to allow moving to the slider
+    volumeControlTimeoutRef.current = setTimeout(() => {
+      setShowVolumeControl(false)
+    }, 300)
+  }
+
+  // Handle user interaction to start audio if autoplay was blocked
+  const handleUserInteraction = () => {
+    if (isAuthenticated && audioRef.current && !audioStarted) {
+      audioRef.current.play()
+        .then(() => {
+          setAudioStarted(true)
+        })
+        .catch((error) => {
+          console.log('Audio play failed:', error)
+        })
     }
   }
 
@@ -126,6 +189,14 @@ const LovePage = () => {
 
   return (
     <div className="love-page">
+      {/* Background Music */}
+      <audio
+        ref={audioRef}
+        src="/audio/tahanan.mp3"
+        loop
+        preload="auto"
+      />
+      
       {/* Animated Background Flowers */}
       <div className="flowers-container">
         {flowers.map((flower) => (
@@ -162,13 +233,57 @@ const LovePage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="love-content">
-        <button 
-          onClick={goBackToPortfolio}
-          className="back-button"
-        >
-          ← Back to Portfolio
-        </button>
+      <div className="love-content" onClick={handleUserInteraction} onTouchStart={handleUserInteraction}>
+        <div className="top-controls">
+          <button 
+            onClick={goBackToPortfolio}
+            className="back-button"
+          >
+            ← Back to Portfolio
+          </button>
+          
+          {/* Volume Control */}
+          <div 
+            className="volume-control-container"
+            onMouseEnter={handleVolumeMouseEnter}
+            onMouseLeave={handleVolumeMouseLeave}
+          >
+            <button 
+              className="volume-icon-button"
+              onClick={(e) => {
+                e.stopPropagation()
+                if (volumeControlTimeoutRef.current) {
+                  clearTimeout(volumeControlTimeoutRef.current)
+                  volumeControlTimeoutRef.current = null
+                }
+                setShowVolumeControl(!showVolumeControl)
+              }}
+              aria-label="Volume control"
+            >
+              {volume === 0 ? '🔇' : volume < 0.5 ? '🔉' : '🔊'}
+            </button>
+            <div 
+              className={`volume-slider-wrapper ${showVolumeControl ? 'show' : ''}`}
+              onClick={(e) => e.stopPropagation()}
+              onMouseEnter={handleVolumeMouseEnter}
+              onMouseLeave={handleVolumeMouseLeave}
+            >
+              <input
+                type="range"
+                min="0"
+                max="1"
+                step="0.01"
+                value={volume}
+                onChange={handleVolumeChange}
+                onClick={(e) => e.stopPropagation()}
+                onMouseEnter={handleVolumeMouseEnter}
+                className="volume-slider"
+                aria-label="Volume"
+              />
+              <span className="volume-percentage">{Math.round(volume * 100)}%</span>
+            </div>
+          </div>
+        </div>
 
         <div className="love-main">
           {/* Title Section */}
