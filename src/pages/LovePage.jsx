@@ -192,7 +192,7 @@ const LovePage = () => {
       {/* Background Music */}
       <audio
         ref={audioRef}
-        src="/audio/tahanan.mp3"
+        src="/audio/way-sukod.mp3"
         loop
         preload="auto"
       />
