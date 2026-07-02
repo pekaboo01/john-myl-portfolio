@@ -306,7 +306,7 @@ const LovePage = () => {
             <div className="photo-frame">
               <div className="photo-wrapper" onClick={handleImageClick}>
                 <img 
-                  src="/images/us.jpg" 
+                  src="/images/us3.jpg" 
                   alt="John and Mary" 
                   className="photo-image"
                   onError={(e) => {
