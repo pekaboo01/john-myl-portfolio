@@ -114,7 +114,7 @@ const Contact = () => {
                   className="social-icon facebook"
                 >
                   <img 
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1200px-Facebook_Logo_%282019%29.png" 
+                    src="https://commons.wikimedia.org/wiki/File:Facebook_Logo_2023.png" 
                     alt="Facebook" 
                     className="social-logo"
                   />
@@ -127,7 +127,7 @@ const Contact = () => {
                   className="social-icon instagram"
                 >
                   <img 
-                    src="https://www.instagram.com/static/images/ico/favicon-200.png/ab6eff595bb1.png" 
+                    src="https://pngtree.com/freepng/3d-instagram-icon-vector_9015419.html" 
                     alt="Instagram" 
                     className="social-logo"
                   />
