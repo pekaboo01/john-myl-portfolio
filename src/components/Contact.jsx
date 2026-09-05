@@ -114,7 +114,7 @@ const Contact = () => {
                   className="social-icon facebook"
                 >
                   <img 
-                    src="https://commons.wikimedia.org/wiki/File:Facebook_Logo_2023.png" 
+                    src="https://www.freepnglogos.com/uploads/facebook-logo-icon/facebook-logo-icon-facebook-icon-png-images-icons-and-png-backgrounds-1.png" 
                     alt="Facebook" 
                     className="social-logo"
                   />
@@ -127,7 +127,7 @@ const Contact = () => {
                   className="social-icon instagram"
                 >
                   <img 
-                    src="https://pngtree.com/freepng/3d-instagram-icon-vector_9015419.html" 
+                    src="https://www.freepnglogos.com/uploads/instagram-icon-png/instagram-icon-buddha-quotes-that-can-change-your-life-gabriela-green-24.png" 
                     alt="Instagram" 
                     className="social-logo"
                   />
