@@ -95,6 +95,7 @@ const Hero = () => {
             
             <SnakeGame />
             
+            {/*
             <div className="games-cta fade-in stagger-5">
               <button 
                 className="view-more-games-btn btn btn-ripple magnetic"
@@ -105,6 +106,7 @@ const Hero = () => {
                 🎮 View More Games
               </button>
             </div>
+            */}
           </div>
         </div>
       </div>
