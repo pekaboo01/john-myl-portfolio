@@ -55,21 +55,25 @@ const Header = () => {
                 Projects
               </button>
             </li>
+            {/*
             <li className="nav-item">
               <a href="/games" className="nav-link games-nav-link">
                 Games
               </a>
             </li>
+            */}
             <li className="nav-item">
               <button onClick={() => scrollToSection('contact')} className="nav-link">
                 Contact
               </button>
             </li>
+            {/*
             <li className="nav-item">
               <a href="/love" className="nav-link games-nav-link">
                 Love
               </a>
             </li>
+            */}
           </ul>
         </nav>
 
