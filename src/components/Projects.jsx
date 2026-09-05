@@ -36,7 +36,7 @@ const Projects = () => {
       description: 'A comprehensive web-based dental management system for managing appointments, patient records, user account system, inventory, and clinic analytical data. Streamlines dental practice operations.',
       technologies: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'Firebase', 'Express.js', 'MongoDB'],
       image: '/images/vsdiamond-project.png',
-      status: 'In Development',
+      status: 'Completed',
       category: 'Web System'
     }
   ]
