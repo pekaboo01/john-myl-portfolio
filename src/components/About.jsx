@@ -35,10 +35,12 @@ const About = () => {
                 About Me
               </h3>
               <p className="about-text">
-                I'm a 4th-year Computer Engineering student at the University of San Carlos – Talamban Campus. 
-                I'm passionate about exploring technology, solving problems, and continuously learning to improve 
-                my skills. While I'm still growing in my journey, I look forward to applying what I've learned 
-                to real-world projects and contributing to meaningful solutions through teamwork and innovation.
+                A motivated Computer Engineering graduate from the University of San
+                Carlos with a strong interest in technology, problem-solving, and
+                continuous learning. Equipped with academic knowledge and hands-on
+                project experience, with a strong desire to contribute to real-world
+                applications, develop innovative solutions, and grow professionally in a
+                collaborative and team-oriented environment.
               </p>
               <blockquote className="about-quote">
                 "The best code is no code at all. But if you must write code, make it beautiful." - Me
