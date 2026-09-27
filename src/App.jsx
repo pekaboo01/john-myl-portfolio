@@ -9,7 +9,7 @@ import Technologies from './components/Technologies'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 // import GamesPage from './pages/GamesPage'
-// import LovePage from './pages/LovePage'
+import LovePage from './pages/LovePage'
 
 // Main Portfolio Component with Loading
 const MainPortfolio = () => {
@@ -66,8 +66,8 @@ function App() {
           
           {/*
           <Route path="/games" element={<GamesPage />} />
-          <Route path="/love" element={<LovePage />} />
           */}
+          <Route path="/love" element={<LovePage />} />
         </Routes>
       </div>
     </Router>
